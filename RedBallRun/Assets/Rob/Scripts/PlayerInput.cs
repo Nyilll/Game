@@ -12,12 +12,17 @@ public class PlayerInput : MonoBehaviour
 
     public bool usePhysicalMotion;
     public float physicalSpeed = 60f;
-    
+
+
+    public Transform player;
 
     // Start is called before the first frame update
     void Start()
-    { 
-        rigidBody = gameObject.GetComponent<Rigidbody>(); 
+    {
+       
+        rigidBody = gameObject.GetComponent<Rigidbody>();
+
+        
 
     }
 
@@ -55,17 +60,25 @@ public class PlayerInput : MonoBehaviour
         }
 
         
-
-        // Debug.Log(Input.mousePosition); This is the rotation
+        
+        // 4/05/2021  Debug.Log(Input.mousePosition); // This is the rotation
         // Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.y = gameObject.transform.position.y;
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.y = player.position.y;
         // Debug.Log(mousePosition);
-        transform.LookAt(mousePosition);
 
+        transform.LookAt(mousePosition);
         
 
+
     }
+
+   /* void FixedUpdate()
+    {
+        int layerMask = 1 << 12;
+        RaycastHit hit;
+
+    } */
 
     /*void OnCollisionEnter(Collision coll)
     {
@@ -73,12 +86,12 @@ public class PlayerInput : MonoBehaviour
         {
             rigidBody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
         }
-    }*/
+    }
 
-    
+     when the player collides with the plane, freeze the y constrain */
 
-   
+
 }
 
-// when the player collides with the plane, freeze the y constrain
+
 

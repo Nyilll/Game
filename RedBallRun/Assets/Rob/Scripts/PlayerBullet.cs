@@ -26,7 +26,7 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.TryGetComponent(out Health health))
+        if (other.transform.root.gameObject.TryGetComponent(out Health health))
         {
             health.Damage(damage);
             Destroy(gameObject);

@@ -14,10 +14,12 @@ public class RayCastTest01 : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo, 100))
         {
             Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
+            
         }
         else
         {
             Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100, Color.green);
+            
         }
     }
 }

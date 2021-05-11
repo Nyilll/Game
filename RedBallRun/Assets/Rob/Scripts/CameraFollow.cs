@@ -16,7 +16,7 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cameraOffset = transform.position; // - targetObject.transform.position; (This freezes the player rotation, potentially due to the falling start)
+        cameraOffset = transform.position; // targetObject.transform.position;  (This freezes the player rotation, potentially due to the falling start)
     }
 
     // Update is called once per frame

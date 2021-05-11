@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319964323717558470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.028000832, y: 0, z: 0.5869999}
+  m_LocalPosition: {x: -0.028000832, y: 0, z: 0.786}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 4776779393973573799}
@@ -89,7 +89,7 @@ BoxCollider:
   m_GameObject: {fileID: 319964323717558470}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -105,6 +105,9 @@ GameObject:
   - component: {fileID: 2786656156104463260}
   - component: {fileID: 5190584974592975901}
   - component: {fileID: 9029742381523052364}
+  - component: {fileID: -3306698345720419365}
+  - component: {fileID: 190046920381904484}
+  - component: {fileID: -3189978771970454503}
   m_Layer: 0
   m_Name: EnemyPlaceholder 1
   m_TagString: Untagged
@@ -186,4 +189,49 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3306698345720419365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730303273480900399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16151b76737c0ba4fa49be7c53960935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  isActive: 0
+--- !u!114 &190046920381904484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730303273480900399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 778359a452bf76049bc6d8f325ab6e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretBulletPrefab: {fileID: 8159472321778527673, guid: 0c44451cbdd6c2c468b658d29170d21d,
+    type: 3}
+  nozzle: {fileID: 0}
+  reloadTime: 0.6
+  reloading: 0
+  radar: {fileID: 0}
+--- !u!135 &-3189978771970454503
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730303273480900399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 100
   m_Center: {x: 0, y: 0, z: 0}

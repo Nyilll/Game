@@ -17,10 +17,10 @@ TagManager:
   - PlayerBullet
   - Enemy
   - EnemyBullet
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - PatternThreeBullets
+  - Border
+  - Floaters
   - 
   - 
   - 

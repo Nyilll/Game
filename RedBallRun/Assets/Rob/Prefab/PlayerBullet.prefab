@@ -124,6 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbody: {fileID: 0}
-  speed: 10
+  speed: 12
   lifespan: 1
   damage: 4

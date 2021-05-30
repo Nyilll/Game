@@ -6,42 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class GameCore : MonoBehaviour
 {
-    public int playerLives = 3;
     public int playerScore = 0;
-
-                                                                                                                                                    /*public float totalLevelSeconds = 20f;
-                                                                                                                                                    public float currentLevelSeconds;*/
+    public int playerHP = 120;
 
     public Text scoreUI;
-    public Text livesUI;
+    public Text hpUI;
 
     void Start()
     {
-                                                                                                                                                    /*currentLevelSeconds = totalLevelSeconds;*/
+        
     }
 
     void Update()
     {
-                                                                                                                                                    /* currentLevelSeconds -= Time.deltaTime;
-                                                                                                                                                    if (currentLevelSeconds <= 0f)
-                                                                                                                                                    {
-                                                                                                                                                        Debug.Log("Time's Up");
-                                                                                                                                                    } */
-
         scoreUI.text = playerScore.ToString();
-        livesUI.text = "Lives:" + playerLives.ToString();
+       hpUI.text = playerHP.ToString();
     }
 
-
-    public void decreasePlayerLives()
-    {
-        playerLives--;
-
-        if (playerLives <= 0)
-        {
-            Debug.Log("GAME OVER");
-        }
-    }
 
     public void increasePlayerScore(int value)
     {
@@ -50,10 +31,27 @@ public class GameCore : MonoBehaviour
 
     public void NextLevel()
     {
-        // WaitForSeconds
+        
         SceneManager.LoadScene("Level_01");
+    }
+
+    public void Health(int health)
+    {
+        playerHP = health;
+    }
+
+    public void Recovery()
+    {
+        playerHP = playerHP + 20;
+    } 
+
+    public void GameOver()
+    {
+
+        SceneManager.LoadScene("GameOver");
+        
+
     }
 
 }
 
-/* return new yield WaitForSeconds(4f);

@@ -4,34 +4,38 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int health = 20;
+    public int health = 120;
+    public GameCore gameCore;
+    public int value = 10;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-
+        gameCore = GameObject.FindObjectOfType<GameCore>();
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    public void Recover(int recovery)
     {
-
+        health += recovery;
+        gameCore.Recovery();
+        gameCore.increasePlayerScore(value);
     }
     public void Damage(int damage)
     {
         // Debug.Log("OWWW:" + damage);
         health -= damage;
+        gameCore.Health(health);
         if (health <= 0)
         {
-            Debug.Log("DEAD");
+            //Debug.Log("DEAD");
             if (gameObject.TryGetComponent(out Death death))
             {
                 death.HandleDeath();
+                health = 120;
             }
             else
             {
-                Debug.Log("No Death script attached.");
+                //Debug.Log("No Death script attached.");
             }
         }
     }

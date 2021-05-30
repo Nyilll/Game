@@ -33,4 +33,4 @@ public class Floater : MonoBehaviour
 
         transform.position = tempPos;
     }
-}
+} // Can't find where i originally found this script back in week 2 (thus no reference), so i cant use it T-T

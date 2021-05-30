@@ -22,8 +22,9 @@ public class PlayerDeath : Death
     public override void HandleDeath()
     {
         Debug.Log("DEFEAT");
-        gameCore.decreasePlayerLives();
+                                                                                                                                        // gameCore.decreasePlayerLives();
         player.transform.position = respawnPoint.transform.position;
         Physics.SyncTransforms();
+
     }
 }

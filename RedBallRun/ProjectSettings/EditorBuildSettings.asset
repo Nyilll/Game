@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Rob/Scenes/Level_00.unity
     guid: ac97f8980a8130e4c8b6510215fd97ad
+  - enabled: 1
+    path: Assets/Rob/Scenes/GameOver.unity
+    guid: 7efeaf9c7b2508247b2b904a71fc9758
   m_configObjects: {}

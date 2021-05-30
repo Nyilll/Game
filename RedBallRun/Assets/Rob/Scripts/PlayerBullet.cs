@@ -9,6 +9,13 @@ public class PlayerBullet : MonoBehaviour
     public float lifespan = 1f;
 
     public int damage = 4;
+   /* public AudioSource audiosource;
+    public AudioClip impactSound; */
+
+    void Start()
+    {
+        // audiosource = gameObject.GetComponent<AudioSource>();
+    }
 
     // Start is called before the first frame update
     void Awake()
@@ -26,10 +33,23 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.transform.root.gameObject.TryGetComponent(out Health health))
+        if (other.transform.root.gameObject.TryGetComponent(out Health hp))
         {
-            health.Damage(damage);
+            hp.Damage(damage);
             Destroy(gameObject);
         }
+        /* StartCoroutine("HandleBulletCollision"); */
     }
+
+    /* private IEnumerator HandleBulletCollision()
+    {
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+        audiosource.PlayOneShot(impactSound);
+        yield return new WaitForSeconds(impactSound.length);
+
+
+
+    }
+    btws this is impact sound */
 }
